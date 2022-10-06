@@ -46,7 +46,6 @@ function getPressedPieceByColor(loc, color) {
 
 function onMouseDown(evt) {
   const imgData = HELPER_CONTEXT.getImageData(evt.x, evt.y, 1, 1);
-  console.log(imgData)
   if (imgData.data[3] === 0) return; // ? transparent, so we are not clicking on anything
 
   const clickedColor = `rgb(${imgData.data[0]},${imgData.data[1]},${imgData.data[2]})`;
@@ -106,23 +105,23 @@ function playNote(key, duration) {
 }
 
 function playSnapMelody() {
-  playNote(frequencyKeys.da, 100);
+  playNote(keys.da, 100);
 
   setTimeout(() => {
-    playNote(frequencyKeys.do, 100);
+    playNote(keys.do, 100);
   }, 100);
 }
 
 function playCompleteMelody() {
-  playNote(frequencyKeys.DO, 300);
+  playNote(keys.DO, 300);
   setTimeout(() => {
-    playNote(frequencyKeys.DO, 175);
+    playNote(keys.DO, 175);
   }, 300);
   setTimeout(() => {
-    playNote(frequencyKeys.RE, 150);
+    playNote(keys.RE, 150);
   }, 475);
   setTimeout(() => {
-    playNote(frequencyKeys.MI, 600);
+    playNote(keys.MI, 600);
   }, 565);
 }
 
