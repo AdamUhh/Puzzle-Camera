@@ -105,23 +105,23 @@ function playNote(key, duration) {
 }
 
 function playSnapMelody() {
-  playNote(keys.da, 100);
+  playNote(frequencyKeys.da, 100);
 
   setTimeout(() => {
-    playNote(keys.do, 100);
+    playNote(frequencyKeys.do, 100);
   }, 100);
 }
 
 function playCompleteMelody() {
-  playNote(keys.DO, 300);
+  playNote(frequencyKeys.DO, 300);
   setTimeout(() => {
-    playNote(keys.DO, 175);
+    playNote(frequencyKeys.DO, 175);
   }, 300);
   setTimeout(() => {
-    playNote(keys.RE, 150);
+    playNote(frequencyKeys.RE, 150);
   }, 475);
   setTimeout(() => {
-    playNote(keys.MI, 600);
+    playNote(frequencyKeys.MI, 600);
   }, 565);
 }
 

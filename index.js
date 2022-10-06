@@ -30,7 +30,7 @@ function main() {
   CANVAS = document.getElementById("myCanvas");
   CONTEXT = CANVAS.getContext("2d");
   HELPER_CANVAS = document.getElementById("helperCanvas");
-  HELPER_CONTEXT = HELPER_CANVAS.getContext("2d");
+  HELPER_CONTEXT = HELPER_CANVAS.getContext("2d", { willReadFrequently: true });
   addEventListeners();
 
   // ? Get user camera (& permission)
@@ -57,13 +57,13 @@ function main() {
       HELPER_CANVAS.height = window.innerHeight;
       VIDEO = false;
 
-      const imgArr = ["img1.jpg", "img2.png", "img3.jpg"];
-      const rand = Math.floor(Math.floor(Math.random() * imgArr.length));
+      // const imgArr = ["img1.jpg", "img2.png", "img3.jpg"];
+      // const rand = Math.floor(Math.floor(Math.random() * imgArr.length));
 
       IMAGE.onload = () => {
         if (IMAGE.width > window.innerWidth - 200) {
           let ratio = IMAGE.naturalWidth / IMAGE.naturalHeight;
-          let width = IMAGE.width > 1500 && CANVAS.width > 1500 ? 1500 : CANVAS.width - 300
+          let width = IMAGE.width > 1500 && CANVAS.width > 1500 ? 1500 : CANVAS.width - 300;
           let height = width / ratio;
           SIZE.width = width;
           SIZE.height = height;
@@ -270,9 +270,6 @@ class Piece {
   draw(context, useCam = true) {
     context.beginPath();
 
-    // ? Create a rect
-    // context.rect(this.x, this.y, this.width, this.height);
-
     // ? minimum length of piece
     const sz = Math.min(this.width, this.height);
     const neck = 0.05 * sz;
@@ -287,7 +284,7 @@ class Piece {
     const scaledTabHeight = VIDEO
       ? (Math.min(VIDEO.videoWidth / SIZE.columns, VIDEO.videoHeight / SIZE.rows) * tabHeight) / sz
       : (Math.min(IMAGE.width / SIZE.columns, IMAGE.height / SIZE.rows) * tabHeight) / sz;
-
+    console.log('test')
     if (!useCam) {
       context.fillStyle = this.color;
       context.fillRect(
