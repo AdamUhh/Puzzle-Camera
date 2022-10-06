@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Puzzle Camera</title>
+    <link href="index.css" rel="stylesheet" />
+  </head>
+  <body onload="main()">
+    <canvas id="myCanvas"></canvas>
+    <canvas id="helperCanvas" style="display: none"></canvas>
+    <div id="menuItems">
+      <div id="menu ">
+        <div id="controls">
+          <h4>Difficulty</h4>
+          <select id="difficulty" onchange="setDifficulty()">
+            <option value="easy">Easy (3, 3)</option>
+            <option value="medium">Medium (5, 5)</option>
+            <option value="hard">Hard (10, 10)</option>
+            <option value="insane">Insane (40, 25)</option>
+          </select>
+          <br />
+          <br />
+          <button onclick="restart()">Start</button>
+          <p>Note: webcam is not required, there are random images to use</p>
+          <p>P.S. Refresh page for a different image</p>
+        </div>
+      </div>
+    </div>
+
+    <button id="showMenuBtn" onclick="showMenu()">Menu</button>
+
+    <div id="time"></div>
+
+    <script src="events.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>

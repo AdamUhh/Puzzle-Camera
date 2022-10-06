@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  overscroll-behavior: none;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+}
+
+#menuItems {
+  width: 80vmin;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  padding: 5vmin;
+  border: 1vmin rgba(0, 0, 0, 0.6) solid;
+  font-size: 7vmin;
+  border-radius: 1vmin;
+}
+#menuItems.hidden {
+  display: none;
+}
+
+#menuItems p {
+  font-size: 2vmin;
+}
+
+button {
+  font-size: 7vmin;
+  background: rgb(123, 146, 196);
+  color: white;
+  transition: 0.3s;
+  border: none;
+  border-radius: 1vmin;
+  padding: 1vmin 3vmin;
+}
+
+button:hover {
+  background: orange;
+  color: black;
+  cursor: pointer;
+}
+
+#showMenuBtn {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 4vmin;
+}
+
+select {
+  font-size: 7vmin;
+  cursor: pointer;
+  border: none;
+  border-radius: 1vmin;
+  outline: none;
+  padding: 2vmin;
+}
+
+#time {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 5vmin;
+}
