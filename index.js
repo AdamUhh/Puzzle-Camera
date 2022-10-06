@@ -284,7 +284,6 @@ class Piece {
     const scaledTabHeight = VIDEO
       ? (Math.min(VIDEO.videoWidth / SIZE.columns, VIDEO.videoHeight / SIZE.rows) * tabHeight) / sz
       : (Math.min(IMAGE.width / SIZE.columns, IMAGE.height / SIZE.rows) * tabHeight) / sz;
-    console.log('test')
     if (!useCam) {
       context.fillStyle = this.color;
       context.fillRect(
